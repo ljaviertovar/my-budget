@@ -1,7 +1,7 @@
 import React, {Fragment, useState} from 'react'
 import Error from './Error'
 
-const Ask = () => {
+const Ask = ({setBudget, setRest, showAsk}) => {
 
     const [quantity, setQuantity] = useState(0)
     const [error, setError] = useState(false)
@@ -18,7 +18,9 @@ const Ask = () => {
             return
         }
 
-
+        setBudget(quantity)
+        setError(quantity)
+        showAsk(false)
         setError(false)
     }
 
